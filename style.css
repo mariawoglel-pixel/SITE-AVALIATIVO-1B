@@ -1,0 +1,79 @@
+/* --- DESIGN SYSTEM & VARIÁVEIS --- */
+:root {
+    --primary-color: #2d6a4f;
+    --secondary-color: #95d5b2;
+    --text-color: #1b4332;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --radius: 12px;
+    --spacing: 1.5rem;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 16px;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary-color: #ffff00;
+    --secondary-color: #ffffff;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --white: #000000;
+}
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background 0.3s;
+}
+
+/* --- LAYOUT (GRID & FLEXBOX) --- */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+header ul { display: flex; list-style: none; gap: 1rem; }
+
+/* Grid Responsivo para os Cards */
+.grid-container {
+    display: grid;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    /* Mobile-first: 1 coluna. Desktop: 3 colunas (via Media Query abaixo) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+    background: var(--white);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid var(--secondary-color);
+}
+
+/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 600px) {
+    header nav { flex-direction: column; }
+    font-size: 14px;
+}
