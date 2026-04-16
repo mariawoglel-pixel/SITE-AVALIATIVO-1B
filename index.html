@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMente - Conectando você à natureza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="accessibility-bar" role="complementary" aria-label="Ferramentas de acessibilidade">
+        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">🌓</button>
+    </div>
+
+    <header role="banner">
+        <nav aria-label="Menu principal">
+            <div class="logo">EcoMente</div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero scroll-reveal" aria-labelledby="hero-title">
+            <h1 id="hero-title">Transforme sua rotina com sustentabilidade.</h1>
+            <p>Práticas diárias para um mundo melhor e uma mente mais sã.</p>
+            <button class="btn-primary">Começar Agora</button>
+        </section>
+
+        <section id="servicos" class="services scroll-reveal" aria-labelledby="services-title">
+            <h2 id="services-title">Nossos Pilares</h2>
+            <div id="services-container" class="grid-container" role="region" aria-live="polite">
+                </div>
+        </section>
+
+        <section class="faq scroll-reveal">
+            <h2>Dúvidas Frequentes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                        O que é a EcoMente?
+                    </button>
+                    <div class="accordion-content" hidden>
+                        <p>Somos uma plataforma dedicada a unir tecnologia e ecologia para o bem-estar pessoal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 EcoMente. Feito com foco em acessibilidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
